@@ -14,6 +14,8 @@ def main():
 @app.route('/hello')
 def index(imagename='giphy.webp'):
     # return 'Hello World'
+    
+    # sending data to html frontend
     return render_template('hello.html', name=imagename)
 
 @app.route('/hello/today')
