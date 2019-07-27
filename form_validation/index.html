@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Example of form validation for class CISC3140
+     Brooklyn College
+     author: @katychuang
+     url: http://github.com/DataMascara/cisc3140
+-->
+
+<html>
+
+<head>
+  <title>Change me</title>
+  <meta charset="utf-8"  />
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<h1>Credit Card Validator</h1>
+<form>
+  <div>
+    <label for="changeme">Example of Input Field:</label>
+    <input type="text" id="changeme" name="changeme" required
+     minlength="10" maxlength="20" size="10" 
+     oninput="checkVal(this);"/>
+  </div>
+  <div>
+    <label for="inputmask">With Input Mask:</label>
+    <input type="text" id="inputmask" 
+     minlength="10" maxlength="20" size="20" 
+     oninput="checkVal(this);"
+     onkeyup="whitespacing(this.value)"/>
+  </div>
+    <input type="submit" id="submit" value="Submit" onClick="submitVal(this.form); return false;" class="btn submit hidden" />
+</form>
+     <p>&nbsp;</p>
+
+</body>
+<script src="script.js"></script>  
+</html>
