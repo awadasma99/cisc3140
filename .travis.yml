@@ -1,8 +1,16 @@
+dist: xenial  # required for Python >= 3.7
 language: python
+python:
+  - "3.7"
+virtualenv:
+  system_site_packages: true
+before_script:
+  - export FLASK_APP="python_app/app.py"
 deploy:
   provider: gae
   keyfile: $GAE_KEY  # "YOUR SERVICE ACCOUNT JSON FILE"
   project: $PROJECT_ID2  #"YOUR PROJECT ID"
+
 
 # deploy:
 #   provider: gcs
