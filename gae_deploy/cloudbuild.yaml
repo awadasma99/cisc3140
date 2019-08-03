@@ -1,5 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', '--project=$PROJECT_ID']
+  args: ['app', 'deploy', '--project=_MY_PROJECT_ID']
 
 # from https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories
+# variables starting with '_XXXXX' can be set in the build trigger console
