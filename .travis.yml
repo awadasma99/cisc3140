@@ -12,6 +12,8 @@ deploy:
   provider: gae
   keyfile: $GAE_KEY     # "YOUR SERVICE ACCOUNT JSON FILE"
   project: $PROJECT_ID  # "YOUR PROJECT ID"
+  verbosity: debug
+  on: master
 
 
 # deploy:
