@@ -1,19 +1,14 @@
 language: python
 before_install:
-  - openssl aes-256-cbc -K $encrypted_cb000e709d00_key -iv $encrypted_cb000e709d00_iv -in credentials.tar.gz.enc -out credentials.tar.gz -d
+- openssl aes-256-cbc -K $encrypted_cb000e709d00_key -iv $encrypted_cb000e709d00_iv
+  -in client-secret.json.enc -out client-secret.json -d
+- openssl aes-256-cbc -K $encrypted_cb000e709d00_key -iv $encrypted_cb000e709d00_iv
+  -in credentials.tar.gz.enc -out credentials.tar.gz -d
 before_script:
-  - export FLASK_APP="python_app/app.py"
+- export FLASK_APP="python_app/app.py"
 deploy:
   provider: gae
-  keyfile: $GAE_KEY     # "YOUR SERVICE ACCOUNT JSON FILE"
-  project: $PROJECT_ID  # "YOUR PROJECT ID"
+  keyfile: "$GAE_KEY"
+  project: "$PROJECT_ID"
   verbosity: debug
   on: master
-
-
-# deploy:
-#   provider: gcs
-#   access_key_id: "GCS Interoperable Access Key ID"
-#   secret_access_key: "GCS Interoperable Access Secret"
-#   bucket: "GCS Bucket"
-#   skip_cleanup: true

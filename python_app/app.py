@@ -21,3 +21,6 @@ def index(imagename='giphy.webp'):
 @app.route('/hello/today')
 def today():
     return 'today'
+
+if __name__ == "__main__":
+    app.run("0.0.0.0", debug=True)
