@@ -10,3 +10,4 @@ deploy:
   project: "$PROJECT_ID"
   verbosity: debug
   on: master
+script: python test.py
