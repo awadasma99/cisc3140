@@ -1,4 +1,4 @@
-runtime: python
+runtime: custom  # to use with docker
 env: flex
 entrypoint: gunicorn -b :$PORT app:app
 # entrypoint: python3 python_app/app.py
